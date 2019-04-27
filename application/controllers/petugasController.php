@@ -22,6 +22,7 @@ class petugasController extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('petugasModel');
+        $this->load->model('anggotaModel');
         $this->load->database();
     }
      public function index()
@@ -75,4 +76,11 @@ class petugasController extends CI_Controller {
             redirect('/perpus/anggota/riwayatPeminjam');
 		}
     }
+    public function riwayatPeminjam()
+	{
+        $data['peminjam'] = $this->anggotaModel->list_all();
+        $this->load->view('head');
+        $this->load->view('petugas/dataPeminjaman',$data);
+        $this->load->view('foot');
+	}
 }
