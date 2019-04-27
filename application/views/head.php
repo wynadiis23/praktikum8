@@ -44,7 +44,7 @@
         Petugas
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="/perpus/">Tambah Anggota</a>
+        <a class="dropdown-item" href="/perpus/petugas/tambahAnggota">Tambah Anggota</a>
         <a class="dropdown-item" href="#">Tambah Buku</a>
         <a class="dropdown-item" href="#">Data Pinjaman</a>
         <a class="dropdown-item" href="#">Data Buku</a>

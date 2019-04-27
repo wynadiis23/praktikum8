@@ -32,6 +32,8 @@ class petugasController extends CI_Controller {
         $this->load->view('foot');
     }
     public function tambah(){
-        
+        $this->load->view('head');
+        $this->load->view('petugas/create');
+        $this->load->view('foot');
     }
 }
