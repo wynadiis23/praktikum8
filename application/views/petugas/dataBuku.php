@@ -42,7 +42,7 @@
                         <td><?=$item->tahun_terbit;?></td>
                         <td>
                           <a class="btn btn-danger btn-xs" href="<?php echo site_url('/petugas/hapusDataBuku').'/'.$item->kd_register;?>">Hapus</a>
-                          <a class="btn btn-info btn-xs" href="<?php echo site_url('/petugas/editDataBuku').'/'.$item->kd_register;?>">Edit</a>
+                          <a class="btn btn-info btn-xs" href="<?php echo site_url('/petugas/editDataBukugit').'/'.$item->kd_register;?>">Edit</a>
                         </td>
                       </tr>
                       <?php } ?>
