@@ -52,3 +52,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['home'] = 'homeController/index';
+
+//anggota
+$route['anggota/pinjambuku'] = 'anggotaController/index';
+$route['anggota/peminjaman'] = 'anggotaController/peminjaman';
+$route['anggota/riwayatPeminjam'] = 'anggotaController/riwayatPeminjam';
+
+//petugas
+$route['petugas/tambahAnggota'] = 'petugasController/tambah';
