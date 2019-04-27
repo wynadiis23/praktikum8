@@ -53,4 +53,26 @@ class petugasController extends CI_Controller {
             redirect('/perpus/anggota/riwayatPeminjam');
 		}
     }
+    public function tambahBuku(){
+        $this->load->view('head');
+        $this->load->view('petugas/createBuku');
+        $this->load->view('foot');
+    }
+    public function tambahkanBuku(){
+        if( $_SERVER['REQUEST_METHOD'] == 'POST') {
+			$judul= $this->security->xss_clean( $this->input->post('judul'));
+			$pengarang= $this->security->xss_clean( $this->input->post('pengarang'));
+            $penerbit= $this->security->xss_clean( $this->input->post('penerbit'));
+            $tahun= $this->security->xss_clean( $this->input->post('tahun'));
+			
+			
+			// $data['kd_anggota'] = $anggota;
+            $data['judul_buku'] = $judul;
+            $data['pengarang'] = $pengarang;
+            $data['penerbit'] = $penerbit;
+            $data['tahun_terbit'] = $tahun;
+			$this->petugasModel->tambahkanBuku($data);
+            redirect('/perpus/anggota/riwayatPeminjam');
+		}
+    }
 }

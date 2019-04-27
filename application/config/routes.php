@@ -63,3 +63,5 @@ $route['anggota/riwayatPeminjam'] = 'anggotaController/riwayatPeminjam';
 //petugas
 $route['petugas/tambahAnggota'] = 'petugasController/tambah';
 $route['petugas/tambahkan'] = 'petugasController/tambahkan';
+$route['petugas/tambahBuku'] = 'petugasController/tambahBuku';
+$route['petugas/tambahkanBuku'] = 'petugasController/tambahkanBuku';
