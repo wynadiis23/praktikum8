@@ -14,6 +14,11 @@ class petugasModel extends CI_Model
 					 ->get();
 		return $data->result();
     }
+    public function tambahkanAnggota($data){
+        $this->db->insert('anggota', $data);
+
+        return $this->session->set_flashdata('msg_alert', 'tambah anggota berhasil');
+    }
     // public function numofrows(){
     //     $num = $this->db->num_rows();
     //     return $num;

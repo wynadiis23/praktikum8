@@ -36,4 +36,21 @@ class petugasController extends CI_Controller {
         $this->load->view('petugas/create');
         $this->load->view('foot');
     }
+    public function tambahkan(){
+        if( $_SERVER['REQUEST_METHOD'] == 'POST') {
+			$nama= $this->security->xss_clean( $this->input->post('nama'));
+			$prodi= $this->security->xss_clean( $this->input->post('prodi'));
+            $jenjang= $this->security->xss_clean( $this->input->post('jenjang'));
+            $alamat= $this->security->xss_clean( $this->input->post('alamat'));
+			
+			
+			// $data['kd_anggota'] = $anggota;
+            $data['nama'] = $nama;
+            $data['prodi'] = $prodi;
+            $data['jenjang'] = $jenjang;
+            $data['alamat'] = $alamat;
+			$this->petugasModel->tambahkanAnggota($data);
+            redirect('/perpus/anggota/riwayatPeminjam');
+		}
+    }
 }

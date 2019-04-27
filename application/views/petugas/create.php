@@ -28,7 +28,7 @@
                 <h3 class="box-title">Form Tambah Anggota</h3>
               </div><!-- /.box-header -->
               <div class="box-body">
-                <form method="POST" action="" enctype="multipart/form-data">
+              <form method="POST" action="/perpus/petugas/tambahkan" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="form-group">
                       <label>Nama Anggota</label>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                       <label>Jenjang</label>
-                      <input type="text" name="Jenjang" id="" class="form-control">
+                      <input type="text" name="jenjang" id="" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Alamat</label>
@@ -48,7 +48,7 @@
                     </div>
                     <!-- Btn -->
                     <div class="form-group">
-                     <input type="submit" name="submit" value="Pinjam" class="btn btn-success">
+                     <input type="submit" name="submit" value="Simpan" class="btn btn-success">
                     </div>
                   </div>
                  </form> 
