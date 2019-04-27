@@ -51,7 +51,7 @@
                         </td>
                         <?php } ?>
                         <td>
-                          <a class="btn btn-danger btn-xs" href="/perpus/petugas/hapusDataPinjam/".$item->kd_pinjam>Hapus</a>
+                          <a class="btn btn-danger btn-xs" href="<?php echo site_url('/petugas/hapusDataPinjam').'/'.$item->kd_pinjam;?>">Hapus</a>
                         </td>
                       </tr>
                       <?php } ?>
