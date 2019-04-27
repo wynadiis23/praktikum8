@@ -28,5 +28,10 @@ class petugasModel extends CI_Model
     //     $num = $this->db->num_rows();
     //     return $num;
     // }
+    public function list_all_buku() {
+		$data = $this->db->select('*')
+					 ->from('buku')->get();
+		return $data->result();
+	}
 }
 ?>

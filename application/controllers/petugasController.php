@@ -82,5 +82,11 @@ class petugasController extends CI_Controller {
         $this->load->view('head');
         $this->load->view('petugas/dataPeminjaman',$data);
         $this->load->view('foot');
-	}
+    }
+    public function dataBuku(){
+        $data['buku'] = $this->petugasModel->list_all_buku();
+        $this->load->view('head');
+        $this->load->view('petugas/dataBuku',$data);
+        $this->load->view('foot');
+    }
 }
