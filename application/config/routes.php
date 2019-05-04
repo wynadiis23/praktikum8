@@ -61,9 +61,14 @@ $route['anggota/peminjaman'] = 'anggotaController/peminjaman';
 $route['anggota/riwayatPeminjam'] = 'anggotaController/riwayatPeminjam';
 
 //petugas
-$route['petugas/tambahAnggota'] = 'petugasController/tambah';
+$route['petugas/tambahAnggota'] = 'petugasController/index';
 $route['petugas/tambahkan'] = 'petugasController/tambahkan';
 $route['petugas/tambahBuku'] = 'petugasController/tambahBuku';
 $route['petugas/tambahkanBuku'] = 'petugasController/tambahkanBuku';
 $route['petugas/riwayatPeminjam'] = 'petugasController/riwayatPeminjam';
 $route['petugas/dataBuku'] = 'petugasController/dataBuku';
+$route['petugas/hapusDataPinjam'] = 'petugasController/hapusDataPinjam';
+
+$route['buku/edit'] = 'bukuController/edit';
+$route['buku/saveDataBukuBaru'] = 'bukuController/save';
+$route['buku/hapusDataBuku'] = 'bukuController/hapusDataBuku';

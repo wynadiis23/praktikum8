@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>Perpustakaan</title>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 <!-- Popper JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -35,8 +37,8 @@
         Anggota
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="/perpus/anggota/pinjambuku">Pinjam Buku</a>
-        <a class="dropdown-item" href="/perpus/anggota/riwayatPeminjam">Riwayat Peminjaman</a>
+        <a class="dropdown-item" href="<?php echo base_url()."anggota/pinjambuku" ?>">Pinjam Buku</a>
+        <a class="dropdown-item" href="<?php echo base_url()."anggota/riwayatPeminjam" ?>">Riwayat Peminjaman</a>
       </div>
     </li>
     <li class="nav-item dropdown">
@@ -44,10 +46,10 @@
         Petugas
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="/perpus/petugas/tambahAnggota">Tambah Anggota</a>
-        <a class="dropdown-item" href="/perpus/petugas/tambahBuku">Tambah Buku</a>
-        <a class="dropdown-item" href="/perpus/petugas/riwayatPeminjam">Data Pinjaman</a>
-        <a class="dropdown-item" href="#">Data Buku</a>
+        <a class="dropdown-item" href="<?php echo base_url()."petugas/tambahAnggota" ?>">Tambah Anggota</a>
+        <a class="dropdown-item" href="<?php echo base_url()."petugas/tambahBuku" ?>">Tambah Buku</a>
+        <a class="dropdown-item" href="<?php echo base_url()."petugas/riwayatPeminjam" ?>">Data Pinjaman</a>
+        <a class="dropdown-item" href="<?php echo base_url()."petugas/dataBuku"?>">Data Buku</a>
       </div>
     </li>
   </ul>

@@ -28,7 +28,7 @@
                 <h3 class="box-title">Form Tambah Anggota</h3>
               </div><!-- /.box-header -->
               <div class="box-body">
-              <form method="POST" action="/perpus/petugas/tambahkan" enctype="multipart/form-data">
+              <form method="POST" action="<?php echo base_url()."petugas/tambahkan"?>" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="form-group">
                       <label>Nama Anggota</label>

@@ -28,7 +28,7 @@
                 <h3 class="box-title">Form Peminjaman Buku</h3>
               </div><!-- /.box-header -->
               <div class="box-body">
-                <form method="POST" action="/perpus/anggota/peminjaman" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data" action=<?php echo base_url()."anggota/peminjaman";?>>
                   <div class="box-body">
                     <div class="form-group">
                       <label>Pilih Nama Anda</label>

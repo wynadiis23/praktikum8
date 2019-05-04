@@ -24,6 +24,7 @@ class anggotaController extends CI_Controller {
         $this->load->model('anggotaModel');
         $this->load->model('petugasModel');
         $this->load->model('bukuModel');
+        $this->load->helper('url');
         $this->load->database();
     }
      public function index()
@@ -38,7 +39,6 @@ class anggotaController extends CI_Controller {
         $this->load->view('foot');
     }
     public function peminjaman(){
-        $this->load->helper('url');
         if( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			$buku= $this->security->xss_clean( $this->input->post('buku'));
 			$petugas= $this->security->xss_clean( $this->input->post('petugas'));
@@ -50,7 +50,7 @@ class anggotaController extends CI_Controller {
 			$item['kd_register'] = $buku;
 			$item['tgl_pinjam'] = date('Y-m-d');
 			$this->anggotaModel->peminjaman($data,$item);
-            redirect('/perpus/anggota/riwayatPeminjam');
+            redirect('anggota/pinjambuku');
 		}
     }
     public function riwayatPeminjam()

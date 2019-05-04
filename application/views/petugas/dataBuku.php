@@ -3,6 +3,11 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="card-body">
+                
+                <div class="box-header">
+                  <h3 class="box-title">Data Buku
+                  </h3>
+                </div><!-- /.box-header -->
                 <?php if($this->session->flashdata('msg_alert_error')) { ?>
                       <div class="alert alert-danger">
                           <?=$this->session->flashdata('msg_alert_error');?>
@@ -13,10 +18,6 @@
                           <?=$this->session->flashdata('msg_alert');?>
                       </div>
                 <?php } ?>
-                <div class="box-header">
-                  <h3 class="box-title">Data PBuku
-                  </h3>
-                </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="dataBuku" class="table table-bordered table-hover">
 
@@ -41,8 +42,14 @@
                         <td><?=$item->penerbit;?></td>
                         <td><?=$item->tahun_terbit;?></td>
                         <td>
-                          <a class="btn btn-danger btn-xs" href="<?php echo site_url('/petugas/hapusDataBuku').'/'.$item->kd_register;?>">Hapus</a>
-                          <a class="btn btn-info btn-xs" href="<?php echo site_url('/petugas/editDataBukugit').'/'.$item->kd_register;?>">Edit</a>
+                          <form method="GET" action=<?php echo base_url()."buku/edit";?>>
+                            <input type="hidden" name="id" value=<?php echo $item->kd_register;?>>
+                            <button type="Submit" class="btn btn-info">Edit</button>
+                          </form>
+                          <!-- <form method="GET" action=<?php echo base_url()."buku/hapusDataBuku";?>>
+                            <input type="hidden" name="id_" value=<?php echo $item->kd_register;?>>
+                            <button type="Submit" class="btn btn-warning">Hapus</button>
+                          </form> -->
                         </td>
                       </tr>
                       <?php } ?>

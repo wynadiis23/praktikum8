@@ -19,7 +19,6 @@
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="dataBuku" class="table table-bordered table-hover">
-
                     <thead>
                       <tr>
                         <th>No</th>
@@ -78,7 +77,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="<?=base_url('assets/admin/plugins')?>/datatables/jquery.dataTables.min.js"></script>
     <script src="<?=base_url('assets/admin/plugins')?>/datatables/dataTables.bootstrap.min.js"></script>
-
     <script>
       $(function () {
         $('#dataBuku').DataTable({"pageLength": 10});

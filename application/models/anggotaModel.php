@@ -2,16 +2,11 @@
 
 class anggotaModel extends CI_Model
 {
-    private $table = "users";
-
-    public $id;
-    public $username;
-    public $nama;
-    public $password;
 
     public function __construct()
     {
         parent::__construct();
+        $this->load->library("session");
     }
     
     public function load_data_anggota(){

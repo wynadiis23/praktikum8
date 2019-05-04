@@ -23,16 +23,11 @@ class petugasController extends CI_Controller {
         parent::__construct();
         $this->load->model('petugasModel');
         $this->load->model('anggotaModel');
+        $this->load->helper('url');
         $this->load->database();
     }
      public function index()
 	{
-
-        $this->load->view('head');
-        $this->load->view('anggota/index');
-        $this->load->view('foot');
-    }
-    public function tambah(){
         $this->load->view('head');
         $this->load->view('petugas/create');
         $this->load->view('foot');
@@ -51,7 +46,7 @@ class petugasController extends CI_Controller {
             $data['jenjang'] = $jenjang;
             $data['alamat'] = $alamat;
 			$this->petugasModel->tambahkanAnggota($data);
-            redirect('/perpus/anggota/riwayatPeminjam');
+            redirect('petugas/tambahAnggota');
 		}
     }
     public function tambahBuku(){
@@ -73,7 +68,7 @@ class petugasController extends CI_Controller {
             $data['penerbit'] = $penerbit;
             $data['tahun_terbit'] = $tahun;
 			$this->petugasModel->tambahkanBuku($data);
-            redirect('/perpus/anggota/riwayatPeminjam');
+            redirect('petugas/tambahBuku');
 		}
     }
     public function riwayatPeminjam()
@@ -88,5 +83,17 @@ class petugasController extends CI_Controller {
         $this->load->view('head');
         $this->load->view('petugas/dataBuku',$data);
         $this->load->view('foot');
+    }
+
+    public function hapusDataBuku(){
+
+    }
+
+    public function hapusDataPinjam(){
+        $id= $this->security->xss_clean( $this->input->post('id'));
+        // var_dump($id);  
+        $this->petugasModel->hapus($id);
+        // var_dump($id);
+        redirect('petugas/riwayatPeminjam');
     }
 }

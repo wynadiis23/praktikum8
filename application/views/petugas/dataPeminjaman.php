@@ -23,6 +23,7 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>Kode</th>
                         <th>Nama Peminjam</th>
                         <th>Petugas Yang Melayani</th>
                         <th>Judul Buku</th>
@@ -37,6 +38,7 @@
                      foreach ($peminjam as $item){  ?>
                       <tr>
                         <td><?=$i++;?></td>
+                        <td><?=$item->kd_pinjam;?></td>
                         <td><?=$item->anggota;?></td>
                         <td><?=$item->petugas;?></td>
                         <td><?=$item->judul_buku;?></td>
@@ -51,7 +53,10 @@
                         </td>
                         <?php } ?>
                         <td>
-                          <a class="btn btn-danger btn-xs" href="<?php echo site_url('/petugas/hapusDataPinjam').'/'.$item->kd_pinjam;?>">Hapus</a>
+                          <form method="POST" action=<?php echo base_url()."petugas/hapusDataPinjam";?>>
+                            <input type="hidden" name="id" value=<?php echo $item->kd_pinjam;?>>
+                            <button type="Submit" class="btn btn-danger">Hapus</button>
+                          </form>
                         </td>
                       </tr>
                       <?php } ?>
