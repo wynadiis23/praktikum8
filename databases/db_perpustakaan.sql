@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2019 at 05:50 PM
+-- Generation Time: May 04, 2019 at 10:49 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -46,7 +46,12 @@ INSERT INTO `anggota` (`kd_anggota`, `nama`, `prodi`, `jenjang`, `alamat`) VALUE
 (3, 'Adi Saputra 1', 'Frs', '', 'Tabanan'),
 (4, 'Adi Saputra 1', 'Frs', '', 'Tabanan'),
 (5, 'Adi Saputra 1', 'Frs', '', 'Tabanan'),
-(6, 'Adi Saputra', 'Frs', '2017', 'Br. Tibubiu Kelod, Ds. Tibubiu, Kerambitan, Tabanan Bali');
+(6, 'Adi Saputra', 'Frs', '2017', 'Br. Tibubiu Kelod, Ds. Tibubiu, Kerambitan, Tabanan Bali'),
+(7, 'Baru', 'Tab', '12', 'Bahajb'),
+(8, 'Mamang KEsbor', 'Tabak', '186', 'Bakahs'),
+(9, 'asasasas', 'asasasa', '1212', 'asasas'),
+(10, 'zczczcz', 'zczcz', '2131', 'sasa'),
+(11, 'asasasaxa', 'axaxa', '1213', 'sfasfas');
 
 -- --------------------------------------------------------
 
@@ -67,9 +72,11 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`kd_register`, `judul_buku`, `pengarang`, `penerbit`, `tahun_terbit`) VALUES
-(1, 'Struktur Data', 'Alit INdrawan', 'Sidomulyi', '2019'),
-(2, 'WSN', 'Bapa anu', 'Anu', '1027'),
-(3, 'Baru', 'Baruajan', 'Baruaaa', '1762');
+(1, 'Struktur Data A', 'Alit INdrawan', 'Sidomulyi', '2019 AC'),
+(2, 'WSN', 'Bapa anu', 'Anu A', '1027'),
+(3, 'Baru', 'Baruajan', 'Baruaaa', '1762'),
+(4, 'Matematika', 'Banyupirn', 'Bnanan', '1287'),
+(5, 'Asa', 'Banyupirn', 'oasdouh', '197');
 
 -- --------------------------------------------------------
 
@@ -97,7 +104,20 @@ INSERT INTO `detil_pinjam` (`kd_register`, `kd_pinjam`, `tgl_pinjam`, `tgl_kemba
 (1, 6, '2019-04-27 00:00:00', NULL),
 (2, 7, '2019-04-27 00:00:00', NULL),
 (1, 8, '2019-04-27 00:00:00', NULL),
-(1, 9, '2019-04-27 00:00:00', NULL);
+(1, 9, '2019-04-27 00:00:00', NULL),
+(3, 10, '2019-04-27 00:00:00', NULL),
+(1, 11, '2019-05-04 00:00:00', NULL),
+(3, 12, '2019-05-04 00:00:00', NULL),
+(2, 13, '2019-05-04 00:00:00', NULL),
+(2, 14, '2019-05-04 00:00:00', NULL),
+(1, 15, '2019-05-04 00:00:00', NULL),
+(1, 16, '2019-05-04 00:00:00', NULL),
+(1, 17, '2019-05-04 00:00:00', NULL),
+(1, 18, '2019-05-04 00:00:00', NULL),
+(1, 19, '2019-05-04 00:00:00', NULL),
+(1, 20, '2019-05-04 00:00:00', NULL),
+(1, 21, '2019-05-04 00:00:00', NULL),
+(5, 22, '2019-05-04 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -116,15 +136,13 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`kd_pinjam`, `kd_anggota`, `kd_petugas`) VALUES
-(1, 1, 1),
-(2, 1, 1),
-(3, 1, 1),
-(4, 2, 2),
-(5, 2, 1),
 (6, 0, 1),
 (7, 0, 1),
-(8, 2, 1),
-(9, 2, 1);
+(11, 0, 1),
+(12, 4, 2),
+(19, 6, 1),
+(20, 5, 1),
+(21, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -182,19 +200,19 @@ ALTER TABLE `petugas`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `kd_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `kd_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `kd_register` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `kd_register` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `kd_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `kd_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `petugas`
