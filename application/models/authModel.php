@@ -26,6 +26,11 @@ class authModel extends CI_Model
                     'password' => $row->password
                 );
                 $this->session->get_userdata($session);
+                $data = array(
+                    'last_login' =>date('Y-m-d H:i:s')
+                    );
+                $this->db->where('email', $email);
+                $this->db->update('petugas', $data);
                 $this->session->set_flashdata('msg_alert', 'Anda telah berhasil login!!');    
                 redirect('home');
             }
