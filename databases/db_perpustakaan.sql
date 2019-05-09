@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2019 at 10:49 AM
+-- Generation Time: May 09, 2019 at 09:59 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -51,7 +51,8 @@ INSERT INTO `anggota` (`kd_anggota`, `nama`, `prodi`, `jenjang`, `alamat`) VALUE
 (8, 'Mamang KEsbor', 'Tabak', '186', 'Bakahs'),
 (9, 'asasasas', 'asasasa', '1212', 'asasas'),
 (10, 'zczczcz', 'zczcz', '2131', 'sasa'),
-(11, 'asasasaxa', 'axaxa', '1213', 'sfasfas');
+(11, 'asasasaxa', 'axaxa', '1213', 'sfasfas'),
+(12, 'Anggota1', 'Tauyauy', '1976', 'Iihihih');
 
 -- --------------------------------------------------------
 
@@ -72,11 +73,12 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`kd_register`, `judul_buku`, `pengarang`, `penerbit`, `tahun_terbit`) VALUES
-(1, 'Struktur Data A', 'Alit INdrawan', 'Sidomulyi', '2019 AC'),
+(1, 'Struktur Data A C', 'Alit INdrawan', 'Sidomulyi', '2019 AC'),
 (2, 'WSN', 'Bapa anu', 'Anu A', '1027'),
 (3, 'Baru', 'Baruajan', 'Baruaaa', '1762'),
 (4, 'Matematika', 'Banyupirn', 'Bnanan', '1287'),
-(5, 'Asa', 'Banyupirn', 'oasdouh', '197');
+(5, 'Asa', 'Banyupirn', 'oasdouh', '197'),
+(6, 'Matematika II', 'BAPakmu', 'Bapakmu', '98612');
 
 -- --------------------------------------------------------
 
@@ -117,7 +119,8 @@ INSERT INTO `detil_pinjam` (`kd_register`, `kd_pinjam`, `tgl_pinjam`, `tgl_kemba
 (1, 19, '2019-05-04 00:00:00', NULL),
 (1, 20, '2019-05-04 00:00:00', NULL),
 (1, 21, '2019-05-04 00:00:00', NULL),
-(5, 22, '2019-05-04 00:00:00', NULL);
+(5, 22, '2019-05-04 00:00:00', NULL),
+(4, 23, '2019-05-04 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -140,9 +143,9 @@ INSERT INTO `peminjaman` (`kd_pinjam`, `kd_anggota`, `kd_petugas`) VALUES
 (7, 0, 1),
 (11, 0, 1),
 (12, 4, 2),
-(19, 6, 1),
 (20, 5, 1),
-(21, 4, 1);
+(21, 4, 1),
+(23, 8, 2);
 
 -- --------------------------------------------------------
 
@@ -153,16 +156,19 @@ INSERT INTO `peminjaman` (`kd_pinjam`, `kd_anggota`, `kd_petugas`) VALUES
 CREATE TABLE `petugas` (
   `kd_petugas` int(11) NOT NULL,
   `nama` varchar(256) NOT NULL,
-  `alamat` varchar(256) NOT NULL
+  `alamat` varchar(256) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  `last_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `petugas`
 --
 
-INSERT INTO `petugas` (`kd_petugas`, `nama`, `alamat`) VALUES
-(1, 'Adi Saputra', 'Tabanan'),
-(2, 'Mamang', 'Tabanan');
+INSERT INTO `petugas` (`kd_petugas`, `nama`, `alamat`, `email`, `password`, `last_login`) VALUES
+(1, 'Adi Saputra', 'Tabanan', 'adisaputra.local@gmail.com', '123456', '2019-05-09 01:58:51'),
+(2, 'Mamang', 'Tabanan', '', '', '2019-05-09 06:18:56');
 
 --
 -- Indexes for dumped tables
@@ -200,25 +206,25 @@ ALTER TABLE `petugas`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `kd_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `kd_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `kd_register` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `kd_register` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `kd_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `kd_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `petugas`
 --
 ALTER TABLE `petugas`
-  MODIFY `kd_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `kd_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
