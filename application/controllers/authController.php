@@ -21,10 +21,19 @@ class authController extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        // $this->load->model('homeModel');
+		// $this->load->model('homeModel');
+		$this->load->database();
+		$this->load->helper('url');
+		$this->load->model('authModel');
     }
      public function index()
 	{
         $this->load->view('/auth/login');
+	}
+	public function cekLogin(){
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
+		$this->authModel->prosesLogin($email, $password);
+		
 	}
 }

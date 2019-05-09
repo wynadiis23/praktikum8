@@ -55,6 +55,9 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['home'] = 'homeController/index';
 
+//auth
+$route['login'] = 'authController/cekLogin';
+
 //anggota
 $route['anggota/pinjambuku'] = 'anggotaController/index';
 $route['anggota/peminjaman'] = 'anggotaController/peminjaman';
