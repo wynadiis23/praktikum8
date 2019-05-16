@@ -59,5 +59,20 @@ class anggotaController extends CI_Controller {
         $this->load->view('head');
         $this->load->view('anggota/riwayat_peminjaman',$data);
         $this->load->view('foot');
-	}
+    }
+    public function riwayatPeminjamManual()
+    {
+        $jumlah_data = $this->anggotaModel->jumlah_data();
+        $this->load->library('pagination');
+        $config['base_url'] = base_url()."anggotaController/riwayatPeminjamManual";
+        $config['total_row'] = $jumlah_data;
+        $config['per_page'] = 5;
+        $from = $this->uri->segment(3);
+        var_dump($from);
+        $this->pagination->initialize($config);
+        $data['peminjaman'] = $this->anggotaModel->data($config['per_page'],$from);
+        $this->load->view('head');
+        $this->load->view('anggota/riwayat_peminjam_manual', $data);
+        $this->load->view('foot');
+    }
 }

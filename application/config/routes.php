@@ -62,6 +62,7 @@ $route['login'] = 'authController/cekLogin';
 $route['anggota/pinjambuku'] = 'anggotaController/index';
 $route['anggota/peminjaman'] = 'anggotaController/peminjaman';
 $route['anggota/riwayatPeminjam'] = 'anggotaController/riwayatPeminjam';
+$route['anggota/riwayatPeminjamManual'] = 'anggotaController/riwayatPeminjamManual';
 
 //petugas
 $route['petugas/tambahAnggota'] = 'petugasController/index';

@@ -16,6 +16,7 @@
                 <div class="box-header">
                   <h3 class="box-title">Data Peminjaman Buku
                   </h3>
+                  <span><a href="<?php echo base_url()."anggota/riwayatPeminjamManual"?>">Data Manual</a></span>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="dataBuku" class="table table-bordered table-hover">

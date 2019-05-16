@@ -42,6 +42,21 @@ class anggotaModel extends CI_Model
 					 ->join('buku as b','dp.kd_register = b.kd_register')
 					 ->get();
 		return $data->result();
-	}
+
+		}
+		function data($number,$offset){
+			// return $query = $this->db->get('user',$number,$offset)->result();		
+			$query = $this->db->select('pem.*,dp.*,p.nama as petugas, a.nama as anggota,b.*')
+			->from('peminjaman as pem')
+			->join('detil_pinjam as dp','pem.kd_pinjam = dp.kd_pinjam')
+			->join('petugas as p','pem.kd_petugas = p.kd_petugas')
+			->join('anggota as a','pem.kd_anggota = a.kd_anggota')
+			->join('buku as b','dp.kd_register = b.kd_register')->get('peminjaman',$number,$offset);
+			return $query->result();
+		}
+	 
+		function jumlah_data(){
+			return $this->db->get('peminjaman')->num_rows();
+		}
 }
 ?>
